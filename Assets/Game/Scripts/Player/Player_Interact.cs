@@ -5,6 +5,19 @@ public class Player_Interact : MonoBehaviour
     [Header("---- Object In Hand ----")]
     [SerializeField] private GameObject objectInHand;
 
+
+    void Update()
+    {
+        if (GetInteractionInput())
+        {
+            if (IsAlreadyAObjectInHand())
+            {
+                
+            }
+        }
+    }
+
+
     public void SetObjectInHand(GameObject _newObject)
     {
         if (objectInHand != null)
@@ -23,8 +36,28 @@ public class Player_Interact : MonoBehaviour
         return objectInHand;
     }
 
+    private bool GetInteractionInput()
+    {
+        if (Input.GetKeyUp(KeyCode.F))
+        {
+            return true;
+        }
+
+        return false;
+    }
+
     private void DeleteObjectInHand()
     {
         objectInHand = null;
+    }
+
+    private bool IsAlreadyAObjectInHand()
+    {
+        if (objectInHand != null)
+        {
+            return true;
+        }
+
+        return false;
     }
 }
