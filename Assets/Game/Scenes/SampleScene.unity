@@ -1571,6 +1571,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1203866554}
+  - component: {fileID: 1203866555}
   - component: {fileID: 1203866553}
   m_Layer: 0
   m_Name: BadBoxDrop
@@ -1598,8 +1599,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.324542, y: 1, z: 4.0893416}
-  m_Center: {x: 0.5551362, y: 0, z: 0.3733356}
+  m_Size: {x: 3.324542, y: 2.4669304, z: 4.0893416}
+  m_Center: {x: 0.5551362, y: 0.7334652, z: 0.3733356}
 --- !u!4 &1203866554
 Transform:
   m_ObjectHideFlags: 0
@@ -1616,6 +1617,22 @@ Transform:
   - {fileID: 525995522}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1203866555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1203866552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fde4cb8098ea4c908d2e3015c5ae2b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPoint: 0
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1 &1636723494
 GameObject:
   m_ObjectHideFlags: 0
