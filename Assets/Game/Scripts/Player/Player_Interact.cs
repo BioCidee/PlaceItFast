@@ -1,31 +1,39 @@
+using Unity.Mathematics;
 using UnityEngine;
 
 public class Player_Interact : MonoBehaviour
 {
     [Header("---- Object In Hand ----")]
     [SerializeField] private GameObject objectInHand;
-
+    [SerializeField] private Transform objParent;
 
     void Update()
     {
         if (GetInteractionInput())
         {
-            if (IsAlreadyAObjectInHand())
+            if (!IsAlreadyAObjectInHand())
             {
-                
+                RaycastHit[] hits = Physics.BoxCastAll(transform.position, new Vector3(0.5f, 1f, 0.5f), transform.forward, quaternion.identity);
+
+                foreach (RaycastHit obj in hits)
+                {
+                    Box_SpawnSystem Box = obj.collider.gameObject.GetComponent<Box_SpawnSystem>();
+
+                    if (Box)
+                    {
+                        SetObjectInHand(Box.GiveObjectOnTop());
+                        Box.DeletObjectOnTop();
+                    }
+                }
             }
         }
     }
 
-
-    public void SetObjectInHand(GameObject _newObject)
+    private void SetObjectInHand(GameObject _newObject)
     {
-        if (objectInHand != null)
-        {
-            DeleteObjectInHand();
-        }
-
         objectInHand = _newObject;
+
+        _newObject.transform.SetParent(objParent);
     }
 
     public GameObject GiveObject()

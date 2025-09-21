@@ -54,9 +54,9 @@ public class Box_SpawnSystem : MonoBehaviour
         return objectOnTop;
     }
 
-    private void DeletObjectOnTop()
+    public void DeletObjectOnTop()
     {
-        if(objectOnTop != null)
+        if(objectOnTop == null)
             Debug.LogError($"There is no object to delete on {this.name}!");
 
         objectOnTop = null;
