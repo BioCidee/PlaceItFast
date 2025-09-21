@@ -29,6 +29,14 @@ public class Player_Interact : MonoBehaviour
         }
     }
 
+    public GameObject DropBoxInHand()
+    {
+        if (!objectInHand)
+            return null;
+
+        return objectInHand;
+    }
+
     private void SetObjectInHand(GameObject _newObject)
     {
         objectInHand = _newObject;
@@ -54,7 +62,7 @@ public class Player_Interact : MonoBehaviour
         return false;
     }
 
-    private void DeleteObjectInHand()
+    public void DeleteObjectInHand()
     {
         objectInHand = null;
     }
