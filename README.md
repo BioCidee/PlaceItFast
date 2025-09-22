@@ -3,7 +3,9 @@
 
 ## 🇫🇷 Description (FR)  
 Courte présentation du projet :  
-- Objectif : Faire le tri entre différence pièce, bonne ou mauvaise et faire le meilleur score.  
+- Objectif : Faire le tri entre différence pièce, bonne ou mauvaise et faire le meilleur score.
+
+Note : Petit projet fait en quelque heure pour un défis personnel ! 
 
 Technologies principales : **Unity, C#, Git**  
 
